@@ -13,8 +13,32 @@
 /*SVÑ1200Ñ1
   SVÑ1200Ñ1
   SVÑ1200Ñ1
+  SVÑ1200Ñ1SVÑ1200Ñ1
+  SVÑ1200Ñ0
   SVÑ1200Ñ1
+  SVÑ1200Ñ0
   SVÑ1200Ñ1
+  SVÑ1200Ñ0
+  SVÑ1200Ñ1
+  SVÑ1200Ñ0
+  SVÑ1200Ñ1
+  SVÑ1200Ñ0
+  SVÑ1200Ñ1
+  SVÑ1200Ñ0
+  SVÑ1200Ñ1
+  SVÑ1200Ñ0
+  
+  SVÑ1200Ñ1SVÑ1200Ñ1
+  SVÑ1200Ñ0
+  SVÑ1200Ñ1
+  SVÑ1200Ñ0
+  SVÑ1200Ñ1
+  SVÑ1200Ñ0SVÑ1200Ñ1
+  SVÑ1200Ñ0
+
+  SVÑ1200Ñ1
+  SVÑ1200Ñ0
+
   SVÑ1200Ñ1
 
 */
@@ -70,6 +94,7 @@ void loop() {
 }
 
 void setOutputs() {
+
   if ((distance < triggerVal)) {
     curr = true;
     setActive();
@@ -80,7 +105,7 @@ void setOutputs() {
     curr = false;
     setNormal();
   }
-
+  checkStatus();
   statusUpdate();
 }
 
@@ -139,13 +164,13 @@ void setPinModes() {
 
 void setNormal() {
   digitalWrite(builtinLed, LOW);
-  checkStatus();
+  //checkStatus();
 }
 
 void setActive() {
   digitalWrite(builtinLed, HIGH);
 
-  checkStatus();
+  //checkStatus();
 }
 
 void checkRange() {
