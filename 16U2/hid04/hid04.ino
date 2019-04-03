@@ -41,7 +41,7 @@ void sendActive() {
   delay(keyDel);
   Keyboard.write(0x0056);//V
   delay(keyDel);
-  Keyboard.write(0x003a);//:ñ?
+  Keyboard.write(0x003a);//://WARNING: CHECK SYSTEM LANGUAGE
   delay(keyDel);
   Keyboard.write(0x0031);//1
   delay(keyDel);
@@ -51,7 +51,7 @@ void sendActive() {
   delay(keyDel);
   Keyboard.write(0x0030);//0
   delay(keyDel);
-  Keyboard.write(0x003a);//:ñ?
+  Keyboard.write(0x003a);//://WARNING: CHECK SYSTEM LANGUAGE
   delay(keyDel);
   Keyboard.write(0x0031);//1
   delay(keyDel);

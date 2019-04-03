@@ -9,8 +9,18 @@
 // pin D3: normally high output (to player)
 // pin D4: normally low output (to player)
 
+
+/*SVÑ1200Ñ1
+
+*/
+
+
+//IMPORTANT
+//this code has been modified for a minimal circuit, consisting of an arduino UNO and the Maxbot sensor only.
+//the only connections are three: GND, +5V, and digital pin 2 as pulse input
+
 //constants
-const int pwmPin = 11;//
+const int pwmPin = 2;//11 in other circuit
 const int leftLed = 8;//era 2
 const int rightLed = 10;//era 4
 const int builtinLed = 13;//
@@ -37,7 +47,7 @@ bool prev = false;
 bool developer = false;
 
 void setup() {
-  startSerial();
+  //startSerial();
   setPinModes();
   showAlive();
   //start interIC communication:
@@ -45,8 +55,8 @@ void setup() {
 }
 
 void loop() {
-  checkRange();
-  rangeIndicator();
+  //checkRange();
+  //rangeIndicator();
   getDistance();
   printVals();
   setOutputs();
@@ -54,7 +64,7 @@ void loop() {
   delay(delTime);
 }
 
-void setOutputs() {
+void setOutputs0() {
   if ((distance < triggerVal) && (inRange)) {
     curr = true;
     setActive();
@@ -68,6 +78,22 @@ void setOutputs() {
 
   statusUpdate();
 }
+
+void setOutputs() {
+  if ((distance < triggerVal)) {
+    curr = true;
+    setActive();
+
+  }
+  else
+  {
+    curr = false;
+    setNormal();
+  }
+
+  statusUpdate();
+}
+
 void statusUpdate() {
 
   prev = curr;
@@ -84,7 +110,8 @@ void checkStatus() {
 
 void getDistance() {
   //triggerVal = 1024 - analogRead(trimPin);
-  triggerVal = analogRead(trimPin);
+  //triggerVal = analogRead(trimPin);
+  triggerVal = 60;
   pulse = pulseIn(pwmPin, HIGH);
   distance = (pulse * 2.54) / 147;
 }
@@ -104,7 +131,7 @@ void printVals() {
 void startSerial() {
   if (developer) {
     Serial.begin(9600);
-    delTime = 333;//3 FPS (1000ms/333ms)
+    //delTime = 333;//3 FPS (1000ms/333ms)
   } else {}
 }
 
@@ -120,19 +147,11 @@ void setPinModes() {
 }
 
 void setNormal() {
-  digitalWrite(normHi, HIGH);
-  digitalWrite(normLo, LOW);
-
-  digitalWrite(leftLed , LOW);
-  digitalWrite(rightLed , LOW);
+  digitalWrite(builtinLed, LOW);
 }
 
 void setActive() {
-  digitalWrite(normHi, LOW);
-  digitalWrite(normLo, HIGH);
-
-  digitalWrite(leftLed , HIGH);
-  digitalWrite(rightLed , HIGH);
+  digitalWrite(builtinLed, HIGH);
 
   checkStatus();
 }
