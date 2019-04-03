@@ -25,9 +25,11 @@ void loop() {
   char c = Serial1.read();
   if (c == 'a') {
     sendActive();
-  } else {
+  } else if (c == 'b') {
+
+    sendInactive();
     //do nothing
-  }
+  } else {}
 }
 
 
@@ -54,6 +56,41 @@ void sendActive() {
   Keyboard.write(0x003a);//://WARNING: CHECK SYSTEM LANGUAGE
   delay(keyDel);
   Keyboard.write(0x0031);//1
+  delay(keyDel);
+  //start enter command (CR+LF)
+  Keyboard.write(0x000D);//CR
+  delay(keyDel);
+  Keyboard.write(0x000A);//LF
+  delay(keyDel);
+
+  //Keyboard.write(0x00);
+
+  //delay(10000);
+}
+
+
+void sendInactive() {
+
+
+  //start text: "SV:1200:1"
+
+  Keyboard.write(0x0053);//S
+  delay(keyDel);
+  Keyboard.write(0x0056);//V
+  delay(keyDel);
+  Keyboard.write(0x003a);//://WARNING: CHECK SYSTEM LANGUAGE
+  delay(keyDel);
+  Keyboard.write(0x0031);//1
+  delay(keyDel);
+  Keyboard.write(0x0032);//2
+  delay(keyDel);
+  Keyboard.write(0x0030);//0
+  delay(keyDel);
+  Keyboard.write(0x0030);//0
+  delay(keyDel);
+  Keyboard.write(0x003a);//://WARNING: CHECK SYSTEM LANGUAGE
+  delay(keyDel);
+  Keyboard.write(0x0030);//1
   delay(keyDel);
   //start enter command (CR+LF)
   Keyboard.write(0x000D);//CR

@@ -11,6 +11,11 @@
 
 
 /*SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
 
 */
 
@@ -101,11 +106,12 @@ void statusUpdate() {
 
 void checkStatus() {
   if ((curr == true) && (prev == false)) {
-    //when person is present and previous state was missing
+    //when person is present and previous state was missing (person entry)
     Serial.write('a');
-  } else {
-    //when person is present but previous state was also present
-  }
+  } else if ((curr == false) && (prev == true )) {
+    //person exit
+    Serial.write('b');
+  } else {}
 }
 
 void getDistance() {
