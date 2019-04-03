@@ -7,6 +7,21 @@
   After upload make sure the 16u2 sketch runs, not the HoodLoader2 bootloader.
   This example will type any serial data via keyboard.
 */
+
+/*SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+
+  SVÑ1200Ñ1
+
+*/
+
+
 #include "Keyboard.h"
 #include "HID.h"
 
@@ -72,7 +87,7 @@ void sendActive() {
 void sendInactive() {
 
 
-  //start text: "SV:1200:1"
+  //start text: "SV:1200:0"
 
   Keyboard.write(0x0053);//S
   delay(keyDel);
