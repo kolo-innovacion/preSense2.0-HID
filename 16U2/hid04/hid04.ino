@@ -8,42 +8,8 @@
   This example will type any serial data via keyboard.
 */
 
-/*SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1SVÑ1200Ñ1
-  SVÑ1200Ñ1SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-
-
-
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-
-  SVÑ1200Ñ1
-  SVÑ1200Ñ1
-
-  SVÑ1200Ñ1
-
+/*
+  TEST HERE KEYBOARD INPUT
 */
 
 
