@@ -69,21 +69,6 @@ void loop() {
   delay(delTime);
 }
 
-void setOutputs0() {
-  if ((distance < triggerVal) && (inRange)) {
-    curr = true;
-    setActive();
-
-  }
-  else
-  {
-    curr = false;
-    setNormal();
-  }
-
-  statusUpdate();
-}
-
 void setOutputs() {
   if ((distance < triggerVal)) {
     curr = true;
@@ -154,6 +139,7 @@ void setPinModes() {
 
 void setNormal() {
   digitalWrite(builtinLed, LOW);
+  checkStatus();
 }
 
 void setActive() {
@@ -206,4 +192,16 @@ void showAlive() {
   digitalWrite(leftLed , LOW);
   digitalWrite(rightLed , LOW);
   digitalWrite(builtinLed , LOW);
+}
+
+void blinkLong() {
+  digitalWrite(builtinLed, HIGH);
+  delay(800);
+  digitalWrite(builtinLed, HIGH);
+}
+
+void blinkShort() {
+  digitalWrite(builtinLed, HIGH);
+  delay(800);
+  digitalWrite(builtinLed, HIGH);
 }

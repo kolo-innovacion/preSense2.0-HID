@@ -13,7 +13,32 @@
   SVÑ1200Ñ1
   SVÑ1200Ñ1
   SVÑ1200Ñ1SVÑ1200Ñ1
+  SVÑ1200Ñ1SVÑ1200Ñ1
   SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+
+
+
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+  SVÑ1200Ñ1
+
   SVÑ1200Ñ1
   SVÑ1200Ñ1
 
@@ -37,11 +62,13 @@ void setup() {
   //Serial.begin(115200);
 }
 void loop() {
+
   char c = Serial1.read();
+
   if (c == 'a') {
     sendActive();
-  } else if (c == 'b') {
 
+  } else if (c == 'b') {
     sendInactive();
     //do nothing
   } else {}
@@ -70,7 +97,7 @@ void sendActive() {
   delay(keyDel);
   Keyboard.write(0x003a);//://WARNING: CHECK SYSTEM LANGUAGE
   delay(keyDel);
-  Keyboard.write(0x0031);//1
+  Keyboard.write(0x0031);//1////////////////////////////////
   delay(keyDel);
   //start enter command (CR+LF)
   Keyboard.write(0x000D);//CR
@@ -105,7 +132,7 @@ void sendInactive() {
   delay(keyDel);
   Keyboard.write(0x003a);//://WARNING: CHECK SYSTEM LANGUAGE
   delay(keyDel);
-  Keyboard.write(0x0030);//1
+  Keyboard.write(0x0030);//0////////////////////////////////
   delay(keyDel);
   //start enter command (CR+LF)
   Keyboard.write(0x000D);//CR
